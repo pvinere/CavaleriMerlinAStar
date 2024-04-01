@@ -9,4 +9,10 @@ regelui, poate să îi aşeze pe cavaleri la o masă rotundă astfel încât nic
 să nu fie alături de vreun duşman al său.
 Rezolvaţi problema folosind strategia de căutare A*.
 
+### Informatii:
+
+Proiectul a fost realizat in limbajul de programare Python unde au fost importate modulele
+heapq - modul pentru algoritmul ,,heap queue sau priority queue"
+tkinter - pentru interfata UI
+
 

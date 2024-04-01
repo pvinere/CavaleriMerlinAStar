@@ -24,7 +24,7 @@ class KnightProblem:
     def __init__(self, n, enemies):
         self.n = n
         self.enemies = enemies
-```
+``` 
 2. Se verifica daca fiecare cavaler are dusman in stanga si dreapta sa. <br/>
 ```
 if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in self.enemies[solution[(i + 1) % self.n]]:
@@ -57,6 +57,12 @@ if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in sel
        - daca nu starea(state) este adaugata in multimea inchisa <br/>
        ```
        closed_set.add(state)
+       ```
+       - La final vecinii sunt generati si adaugati in lista deschisa daca nu se afla in multimea inchisa <br/>
+       ```
+       for neighbor in neighbors:
+           if neighbor not in closed_set:
+               heapq.heappush(open_list, (self.heuristic(neighbor) + len(state), neighbor))
        ```
 
 

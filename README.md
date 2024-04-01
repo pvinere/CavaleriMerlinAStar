@@ -11,8 +11,8 @@ Rezolvaţi problema folosind strategia de căutare A*.
 
 ### Informatii:
 
-Proiectul a fost realizat in limbajul de programare Python unde au fost importate modulele
-heapq - modul pentru algoritmul ,,heap queue sau priority queue"
-tkinter - pentru interfata UI
+Proiectul a fost realizat in limbajul de programare Python unde au fost importate modulele <br/>
+heapq - modul pentru algoritmul ,,heap queue sau priority queue" <br/>
+tkinter - pentru interfata UI <br/>
 
 

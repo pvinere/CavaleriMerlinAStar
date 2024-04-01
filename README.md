@@ -30,8 +30,12 @@ class KnightProblem:
 if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in self.enemies[solution[(i + 1) % self.n]]:
     return False
 ```
-3. 
-
+3. Se foloseste calculul euristic pentru a afla solutia cea mai bine (h-ul cat mai mic). <br/>
+   Aceasta este bazata pe nr de cavaleri care sunt langa un dusman.
+```
+if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in self.enemies[solution[(i + 1) % self.n]]:
+    h += 1
+```
 
 
 

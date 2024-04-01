@@ -31,30 +31,30 @@ if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in sel
     return False
 ```
 3. Se foloseste calculul euristic pentru a afla solutia cea mai bine (h-ul cat mai mic). <br/>
-   Aceasta este bazata pe nr de cavaleri care sunt langa un dusman.
+   Aceasta este bazata pe nr de cavaleri care sunt langa un dusman. <br/>
 ```
 if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in self.enemies[solution[(i + 1) % self.n]]:
     h += 1
 ```
 4. Se foloseste agloritmul de cautare A* <br/>
-   Acest are urmatorii pasi pentru acest proiect:
-       - se initalizeaza starea initiala, lista deschisa si multimea inchisa:
+   Acest are urmatorii pasi pentru acest proiect: <br/>
+       - se initalizeaza starea initiala, lista deschisa si multimea inchisa: <br/>
        ```
        start_state = tuple(range(self.n))
        open_list = [(self.heuristic(start_state), start_state)]
        closed_set = set()
        ```
-       - se extrage starea cu cel mai mic cost estimat
+       - se extrage starea cu cel mai mic cost estimat <br/>
        ```
        while open_list:
        _, state = heapq.heappop(open_list)
        ```
-       - daca starea(state) este o solutie valida aceasta este returnata
+       - daca starea(state) este o solutie valida aceasta este returnata <br/>
        ```
        if self.is_valid_solution(state):
            return state
        ```
-       - daca nu starea(state) este adaugata in multimea inchisa
+       - daca nu starea(state) este adaugata in multimea inchisa <br/>
        ```
        closed_set.add(state)
        ```

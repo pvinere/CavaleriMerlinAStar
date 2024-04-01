@@ -105,6 +105,10 @@ Mai jos este o reprezentare a cum arata datele care se introduc in aplicatie:
 5:3,4
 ```
 
+### Interpretarea rezultatelor
+Rezultatele obtinute le-am verificat pe foaie (am generat din start multimi valide sau invalide pe foaie pentru a testa), dar mai jos se afla o reprezentare grafica:
+
+
 
 
 

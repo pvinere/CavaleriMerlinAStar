@@ -1,7 +1,7 @@
 # Cavaleri Merlin AStar
 Problema Cavalerilor AStar
 
-# Cerinta proiect:
+## Cerinta proiect:
 
 24. Problema cavalerilor. La curtea regelui Arthur s-au adunat n cavaleri. Fiecare dintre
 ei are printre cei prezenţi cel puţin un duşman. Verificaţi dacă Merlin, consilierul

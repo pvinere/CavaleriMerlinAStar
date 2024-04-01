@@ -70,7 +70,18 @@ if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in sel
        ```
        <br/>
 
-
+5. La final se primeste o permutare a cavalerilor si returneaza toti vecinii acestei permutari <br/>
+       ```
+       def get_neighbors(self, state):
+        neighbors = []
+        for i in range(self.n):
+            for j in range(i + 1, self.n):
+                # Obtinut prin interschimbarea pozitiilor a doi cavaleri in permutare
+                neighbor = list(state)
+                neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
+                neighbors.append(tuple(neighbor))
+        return neighbors
+       ```
 
 ### Structura Proiect:
 

@@ -1,4 +1,6 @@
 import heapq
+import tkinter as tk
+from tkinter import messagebox
 
 # 24. Problema cavalerilor. La curtea regelui Arthur s-au adunat n cavaleri. Fiecare dintre
 # ei are printre cei prezenţi cel puţin un duşman. Verificaţi dacă Merlin, consilierul
@@ -7,14 +9,17 @@ import heapq
 # Rezolvaţi problema folosind strategia de căutare A*.
 
 # Constructor n - nr. Cavaleri, enemies - dictionar ce contine dusmanii fiecarui cavaler
+
+filename = "date10cav.txt"
+
 class KnightProblem:
     def __init__(self, n, enemies):
         self.n = n
         self.enemies = enemies
 
 
-#Verificare solutie valida - primeste o lista solution - pt fiecare cavaler din lista se verifica
-#daca are dusman in stanga si dreapta
+# Verificare solutie valida - primeste o lista solution - pt fiecare cavaler din lista se verifica
+# daca are dusman in stanga si dreapta
 
     def is_valid_solution(self, solution):
         for i in range(self.n):
@@ -22,8 +27,8 @@ class KnightProblem:
                 return False
         return True
 
-#Primeste o permutare a cavalerilor si calculeaza o euristica simpla bazata pe nr de cavaleri care sunt langa un dusman
-#Cu cat h este mai mic cu atat solutia este considerata mai buna
+# Primeste o permutare a cavalerilor si calculeaza o euristica simpla bazata pe nr de cavaleri care sunt langa un dusman
+# Cu cat h este mai mic cu atat solutia este considerata mai buna
     def heuristic(self, solution):
         h = 0
         for i in range(self.n):
@@ -31,7 +36,7 @@ class KnightProblem:
                 h += 1
         return h
 
-#Metoda A*
+# Metoda A*
     def a_star_search(self):
         # Initializare starea initiala, lista deschisa, multime inchisa
         start_state = tuple(range(self.n))
@@ -59,7 +64,7 @@ class KnightProblem:
 
         return None
 
-    #get_neighbors - primeste o permutare a cavalerilor si returneaza toti vecinii acestei permutari
+    # get_neighbors - primeste o permutare a cavalerilor si returneaza toti vecinii acestei permutari
     def get_neighbors(self, state):
         neighbors = []
         for i in range(self.n):
@@ -70,59 +75,70 @@ class KnightProblem:
                 neighbors.append(tuple(neighbor))
         return neighbors
 
-# NEVALID - NU SE POT ASEZA
-# n = 4
-# enemies = {
-#     0: [1, 2],
-#     1: [0, 3],
-#     2: [0, 3],
-#     3: [1, 2]
-# }
 
-# VALID 5 CAVALERI
-n = 5
-enemies = {
-    0: [2],
-    1: [2, 3],
-    2: [0, 1],
-    3: [1, 4],
-    4: [3]
-}
+def load_data_from_file(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+    # Eliminare linii goale din fisier
+    lines = [line.strip() for line in lines if line.strip()]
+
+    # Verificare daca contine date valide
+    if len(lines) == 0:
+        print("Fisierul este gol sau nu contine date valide!")
+        exit()
+
+    n = int(lines[0])
+    enemies = {}
+    for line in lines[1:]:
+        parts = line.strip().split(':')
+        knight = int(parts[0])
+        enemy_list = list(map(int, parts[1].split(',')))
+        enemies[knight] = enemy_list
+
+    return n, enemies
 
 
 
-# VALID 6 cavaleri
-# Exemplu de utilizare
-# n = 6
-# enemies = {
-#     0: [1, 2],
-#     1: [0, 3],
-#     2: [0, 4],
-#     3: [1, 5],
-#     4: [2, 5],
-#     5: [3, 4]
-# }
+def solve_problem():
+    fn = filename
+    n, enemies = load_data_from_file(fn)
 
-# VALID 10 cavaleri
-# n = 10
-# enemies = {
-#     0: [1, 2, 3],
-#     1: [0, 4, 5],
-#     2: [0, 6, 7],
-#     3: [0, 8, 9],
-#     4: [1, 8, 9],
-#     5: [1, 6, 9],
-#     6: [2, 5, 8],
-#     7: [2, 4, 9],
-#     8: [3, 4, 6],
-#     9: [3, 5, 7]
-# }
+    if n is None or enemies is None:
+        return
 
-knight_problem = KnightProblem(n, enemies)
-solution = knight_problem.a_star_search()
+    knight_problem = KnightProblem(n, enemies)
+    solution = knight_problem.a_star_search()
 
-if solution:
-    print("O soluție posibilă este:", solution)
-else:
-    print("Nu există soluție pentru această configurație.")
+    if solution:
+        messagebox.showinfo("Solutie gasita", f"O solutie posibila este: {solution}")
+    else:
+        messagebox.showinfo("Informatie", "Nu exista solutie pentru aceasta configuratie.")
+
+
+def display_file_content():
+    fn = filename
+    with open(fn, 'r') as file:
+        file_content = file.read()
+    text_box.delete("1.0", "end")
+    text_box.insert("1.0", file_content)
+
+
+# Interfata grafica
+root = tk.Tk()
+root.title("Problema Cavalerilor")
+
+# Butonul pentru rezolvarea problemei
+solve_button = tk.Button(root, text="Rezolva problema", command=solve_problem)
+solve_button.pack()
+
+# Butonul pentru afisarea conținutului fisierului
+display_button = tk.Button(root, text="Afiseaza continutul fisierului", command=display_file_content)
+display_button.pack()
+
+# Campul de text pentru afisarea continutului fisierului
+text_box = tk.Text(root, height=10, width=50)
+text_box.pack()
+
+root.mainloop()
 

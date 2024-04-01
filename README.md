@@ -38,27 +38,27 @@ if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in sel
 ```
 4. Se foloseste agloritmul de cautare A* <br/>
    Acest are urmatorii pasi pentru acest proiect: <br/>
-       - se initalizeaza starea initiala, lista deschisa si multimea inchisa: <br/>
+       1. se initalizeaza starea initiala, lista deschisa si multimea inchisa: <br/>
        ```
        start_state = tuple(range(self.n))
        open_list = [(self.heuristic(start_state), start_state)]
        closed_set = set()
        ```
-       - se extrage starea cu cel mai mic cost estimat <br/>
+       2. se extrage starea cu cel mai mic cost estimat <br/>
        ```
        while open_list:
        _, state = heapq.heappop(open_list)
        ```
-       - daca starea(state) este o solutie valida aceasta este returnata <br/>
+       3. daca starea(state) este o solutie valida aceasta este returnata <br/>
        ```
        if self.is_valid_solution(state):
            return state
        ```
-       - daca nu starea(state) este adaugata in multimea inchisa <br/>
+       4. daca nu starea(state) este adaugata in multimea inchisa <br/>
        ```
        closed_set.add(state)
        ```
-       - La final vecinii sunt generati si adaugati in lista deschisa daca nu se afla in multimea inchisa <br/>
+       5. La final vecinii sunt generati si adaugati in lista deschisa daca nu se afla in multimea inchisa <br/>
        ```
        for neighbor in neighbors:
            if neighbor not in closed_set:

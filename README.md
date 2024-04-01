@@ -117,7 +117,7 @@ Realizata cu tkinter - Python. <br/>
 ![ss](ss.png)
 
 ### Referinte utilizate
-https://www.geeksforgeeks.org/a-search-algorithm/
+https://www.geeksforgeeks.org/a-search-algorithm/ <br/>
 https://en.wikipedia.org/wiki/A*_search_algorithm
 
 

@@ -9,11 +9,13 @@ regelui, poate să îi aşeze pe cavaleri la o masă rotundă astfel încât nic
 să nu fie alături de vreun duşman al său.
 Rezolvaţi problema folosind strategia de căutare A*.
 
+
 ### Informatii:
 
 Proiectul a fost realizat in limbajul de programare Python unde au fost importate modulele: <br/>
 heapq - modul pentru algoritmul ,,heap queue sau priority queue" <br/>
 tkinter - pentru interfata UI <br/>
+
 
 ### Fundamente teoretice despre proiect:
 
@@ -83,9 +85,11 @@ if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in sel
         return neighbors
        ```
 
+
 ### Structura Proiect:
 
 Proiectul este structurat intr-un singur fisier Main.py si 4 fisiere text care contin diferite teste. <br/>
+
 
 ### Testele realizate pentru proiect:
 Sunt existente 4 teste cu cate 4,5,6,10 cavaleri. <br/>

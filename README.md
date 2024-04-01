@@ -15,4 +15,13 @@ Proiectul a fost realizat in limbajul de programare Python unde au fost importat
 heapq - modul pentru algoritmul ,,heap queue sau priority queue" <br/>
 tkinter - pentru interfata UI <br/>
 
+### Structura Proiect:
+
+Proiectul este structurat intr-un singur fisier Main.py si 4 fisiere text care contin diferite teste <br/>
+Sunt existente 4 teste cu cate 4,5,6,10 cavaleri <br/>
+Teste cu 5,6,10 sunt valide si exista o asezare corecta iar ce cu 4 este nevalid <br/>
+
+
+
+
 

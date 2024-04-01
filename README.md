@@ -15,6 +15,26 @@ Proiectul a fost realizat in limbajul de programare Python unde au fost importat
 heapq - modul pentru algoritmul ,,heap queue sau priority queue" <br/>
 tkinter - pentru interfata UI <br/>
 
+### Fundamente teoretice despre proiect:
+
+Pentru a rezolva problema acestui proiect se urmaresc acesti pasi : <br/>
+1. Se primeste un set de date (n - nr cavaleri, enemies- dictionar cu dusmanii fiecarui cavaler). <br/>
+```
+class KnightProblem:
+    def __init__(self, n, enemies):
+        self.n = n
+        self.enemies = enemies
+```
+2. Se verifica daca fiecare cavaler are dusman in stanga si dreapta sa. <br/>
+```
+if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in self.enemies[solution[(i + 1) % self.n]]:
+    return False
+```
+3. 
+
+
+
+
 ### Structura Proiect:
 
 Proiectul este structurat intr-un singur fisier Main.py si 4 fisiere text care contin diferite teste. <br/>

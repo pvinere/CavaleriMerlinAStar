@@ -21,7 +21,7 @@ Proiectul este structurat intr-un singur fisier Main.py si 4 fisiere text care c
 
 ### Testele realizate pentru proiect:
 Sunt existente 4 teste cu cate 4,5,6,10 cavaleri. <br/>
-Teste cu 5,6,10 sunt valide si exista o asezare corecta iar ce cu 4 este nevalid. <br/>
+Teste cu 5,6,10 cavaleri sunt valide si exista o asezare corecta iar ce cu 4 este nevalid. <br/>
 
 
 

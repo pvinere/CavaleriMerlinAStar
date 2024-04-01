@@ -44,26 +44,31 @@ if solution[i] in self.enemies[solution[(i - 1) % self.n]] or solution[i] in sel
        open_list = [(self.heuristic(start_state), start_state)]
        closed_set = set()
        ```
+       <br/>
        2. se extrage starea cu cel mai mic cost estimat <br/>
        ```
        while open_list:
        _, state = heapq.heappop(open_list)
        ```
+       <br/>
        3. daca starea(state) este o solutie valida aceasta este returnata <br/>
        ```
        if self.is_valid_solution(state):
            return state
        ```
+       <br/>
        4. daca nu starea(state) este adaugata in multimea inchisa <br/>
        ```
        closed_set.add(state)
        ```
+       <br/>
        5. La final vecinii sunt generati si adaugati in lista deschisa daca nu se afla in multimea inchisa <br/>
        ```
        for neighbor in neighbors:
            if neighbor not in closed_set:
                heapq.heappush(open_list, (self.heuristic(neighbor) + len(state), neighbor))
        ```
+       <br/>
 
 
 

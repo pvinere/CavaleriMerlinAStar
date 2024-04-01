@@ -111,6 +111,10 @@ Rezultatele obtinute le-am verificat pe foaie (am generat din start multimi vali
 ![repr](repr.png)
 
 
+### Interfata UI
+
+![ss](ss.png)
+
 
 
 

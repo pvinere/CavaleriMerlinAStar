@@ -106,14 +106,19 @@ Mai jos este o reprezentare a cum arata datele care se introduc in aplicatie:
 ```
 
 ### Interpretarea rezultatelor
-Rezultatele obtinute le-am verificat pe foaie (am generat din start multimi valide sau invalide pe foaie pentru a testa), dar mai jos se afla o reprezentare grafica:
+Rezultatele obtinute le-am verificat pe foaie (am generat din start multimi valide sau invalide pe foaie pentru a testa), dar mai jos se afla o reprezentare grafica:<br/>
 
 ![repr](repr.png)
 
 
 ### Interfata UI
+Realizata cu tkinter - Python. <br/>
 
 ![ss](ss.png)
+
+### Referinte utilizate
+https://www.geeksforgeeks.org/a-search-algorithm/
+https://en.wikipedia.org/wiki/A*_search_algorithm
 
 
 
